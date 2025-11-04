@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>trizpro.app — TRIZ + AI mini apps by Vibe Coding Workshop</title>
+  <meta name="description" content="Discover TRIZ + AI mini apps built by the Vibe Coding Workshop community. Browse showcases, meet creators, and launch to gpt.trizpro.app subdomains." />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="trizpro.app — TRIZ + AI mini apps by Vibe Coding Workshop">
+  <meta property="og:description" content="A one-stop hub for community-built TRIZ + AI mini apps.">
+  <meta property="og:image" content="/assets/og/trizpro-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="trizpro.app — TRIZ + AI mini apps by Vibe Coding Workshop">
+  <meta name="twitter:description" content="A one-stop hub for community-built TRIZ + AI mini apps.">
+  <meta name="twitter:image" content="/assets/og/trizpro-og.png">
+
+  <link rel="icon" href="/assets/og/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/og/trizpro-og.png" as="image">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand"><a href="/" aria-label="trizpro.app home">trizpro<span class="accent">.app</span></a></div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#showcase">Showcase</a>
+        <a href="#creators">Creators</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#submit">Submit</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn primary" href="#submit">Submit your mini app</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Your TRIZ + AI mini apps, in one place.</h1>
+          <p>A product hub by <a href="https://vibecodingworkshop.app" target="_blank" rel="noopener noreferrer">vibecodingworkshop.app</a> — discover, learn, and launch.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#showcase">Browse Showcase</a>
+            <a class="btn ghost" href="#submit">Submit your mini app</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <img src="/assets/og/trizpro-og.png" alt="" loading="eager" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section id="showcase" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Showcase</h2>
+          <div class="filters" role="region" aria-label="Filter apps">
+            <label>
+              <span class="visually-hidden">Category</span>
+              <select id="filter-category" aria-label="Filter by category">
+                <option value="">All Categories</option>
+              </select>
+            </label>
+            <input id="filter-search" type="search" placeholder="Search by title or creator…" aria-label="Search apps">
+            <div id="filter-tags" class="tag-chips" aria-label="Filter by tags" role="group"></div>
+          </div>
+        </div>
+        <div id="apps-grid" class="card-grid" aria-live="polite"></div>
+        <div id="empty-state" class="empty" hidden>
+          <p>No apps match your filters.</p>
+          <button id="clear-filters" class="btn">Clear filters</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="creators" class="section alt">
+      <div class="container">
+        <h2>Creators</h2>
+        <p class="section-sub">Makers from Vibe Coding Workshop</p>
+        <div id="creators-grid" class="creator-grid"></div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section">
+      <div class="container">
+        <h2>Testimonials</h2>
+        <div id="testimonials-track" class="testimonials"></div>
+      </div>
+    </section>
+
+    <section id="submit" class="section cta">
+      <div class="container">
+        <h2>Submit your mini app</h2>
+        <p>Share your Vibe Coding project with the world.</p>
+        <ul class="checklist">
+          <li>1–2 screenshots (1200×675)</li>
+          <li>Short description (≤120 words)</li>
+          <li>Live URL <code>https://*.trizpro.app</code></li>
+          <li>Optional: TRIZ principles used</li>
+        </ul>
+        <a class="btn primary" target="_blank" rel="noopener noreferrer" href="https://forms.gle/your-form-id">Open submission form</a>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="container">
+        <h2>About</h2>
+        <p><strong>TRIZPRO</strong> is the one‑stop centre for Vibe Coding mini applications. It connects TRIZ and AI into practical tools you can try, learn from, and remix.</p>
+        <p><a href="https://vibecodingworkshop.app" target="_blank" rel="noopener noreferrer">Visit vibecodingworkshop.app</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> trizpro.app — A product of <a href="https://vibecodingworkshop.app" target="_blank" rel="noopener noreferrer">vibecodingworkshop.app</a></p>
+      <nav aria-label="Footer">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="mailto:hello@trizpro.app">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Details Modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="document">
+      <button class="modal-close" aria-label="Close details" data-close>&times;</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script type="application/ld+json" id="schema-json"></script>
+  <script defer src="main.js"></script>
+</body>
+</html>
